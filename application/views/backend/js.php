@@ -51,10 +51,10 @@
       "paging": true,
       "lengthChange": true,
       "searching": true,
-      "ordering": true,
       "info": true,
       "autoWidth": true,
-    });
+    }
+  );
 
       $("#log_history").DataTable({
         "paging": true,

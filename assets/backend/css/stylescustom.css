@@ -2,3 +2,13 @@
     padding-top: -110px;
 
 }
+
+
+.table.dataTable thead .sorting:after,
+.table.dataTable thead .sorting:before,
+.table.dataTable thead .sorting_asc:after,
+.table.dataTable thead .sorting_asc:before,
+.table.dataTable thead .sorting_desc:after,
+.table.dataTable thead .sorting_desc:before {
+    display: none;
+  }
