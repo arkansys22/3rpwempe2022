@@ -11,18 +11,30 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="col-sm-8">
           <span class="m-0 text-dark" style="font-size:25px;"><strong><?php echo $users_company['user_company_nama'];?> </strong></span><span><?php echo $users_company_level['user_company_level_nama'];?> Management System</span>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><span style="font-size:13px;">Home</span></li>
-            <li class="breadcrumb-item"><span style="font-size:13px;">Finance</span></li>
             <li class="breadcrumb-item"><span style="font-size:13px;">Setting</span></li>
             <li class="breadcrumb-item active"><span style="font-size:13px;">List Supplier</span></li>
           </ol>
         </div>
       </div>
+      <div class="row mb-2">
+        <div class="col-sm-6">
+
+        </div>
+        <div class="col-sm-6">
+          <div class="breadcrumb float-sm-right">
+            <small><a href="" class="" data-toggle="modal" data-target="#modal-default"><span style="color:#808080;" ><i class="fas fa-exclamation-circle"></i> Info Modul</span></a></small>
+
+          </div>
+        </div>
+
+      </div>
+
     </div><!-- /.container-fluid -->
   </section>
 
@@ -51,35 +63,55 @@
         <div class="col-md-12">
           <div class="card card-light">
             <div class="card-header">
-              <h3 class="card-title"><strong>Supplier</strong> <small><a href="" class="" data-toggle="modal" data-target="#modal-default"><span style="color:#b0d12a;" ><i class="fas fa-exclamation-circle"></i></span></a></small></h3>
+              <h3 class="card-title"><strong>Supplier</strong></h3>
 
             </div>
-            <div class="card-body table-responsive " style="font-size:12px;">
-              <div class="col-md-12 d-xs-none" >
-                <?php if ($users['level'] =='3'){ ?>
-                <?php  }else{ ?>
-                  <h3 class="text-right"><a class="btn btn-success btn-sm" title="Tambah" href="<?php echo base_url()?>wmpsupplier/add"><i class="fas fa-plus"></i> Add New</a></h3>
-                <?php }?>
-              </div>
+            <div class="col-md-12 d-xs-none" >
+              <?php if ($users['level'] =='3'){ ?>
+              <?php  }else{ ?>
+                <p><h3 class="text-right"><a class="btn btn-success btn-sm" title="Tambah" href="<?php echo base_url()?>wmpsupplier/add"><i class="fas fa-plus"></i> Add New</a></h3></p>
+              <?php }?>
+            </div>
+            <div class="card-body table-responsive" style="font-size:12px;">
+
               <table id="bank_table1" class="table table-bordered table-striped table-hover" >
                 <thead>
-                  <tr>
-                    <?php if ($users['level'] =='3'){ ?>
-                    <?php  }else{ ?>
-                      <th rowspan="2">Action</th>
-                    <?php }?>
-                    <th rowspan="2">No</th>
-                    <th rowspan="2">Status</th>
-                    <th rowspan="2">ID</th>
-                    <th rowspan="2">Description</th>
-                    <th colspan="2"><center>PIC</center></th>
-                    <th rowspan="2">Currency</th>
-                    <th rowspan="2">Bloked</th>
-                  </tr>
-                  <tr>
-                    <th>NIK</th>
-                    <th>Name</th>
-                  </tr>
+                    <tr style="text-align: center;" >
+                      <?php if ($users['level'] =='3'){ ?>
+                      <?php  }else{ ?>
+                        <th   scope="colgroup" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Action</th>
+                      <?php }?>
+                        <th   scope="colgroup" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >No</th>
+                        <th   scope="colgroup" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Status</th>
+                        <th   scope="colgroup" colspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><center>Supplier</center></th>
+                        <th   scope="colgroup" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >NPWP No.</th>
+                        <th   scope="colgroup" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Address</th>
+                        <th   scope="colgroup" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >City</th>
+
+                        <th   scope="colgroup" colspan="4" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><center>Contact</center></th>
+
+                        <th   scope="colgroup" colspan="3" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><center>Payment</center></th>
+
+                        <th   scope="colgroup" colspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><center>Tax</center></th>
+
+                        <th   scope="colgroup" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Bloked</th>
+                    </tr>
+                    <tr>
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Account</th>
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Name</th>
+
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Person</th>
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Telp No.</th>
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Fax No.</th>
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Email Address</th>
+
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Method</th>
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >TOP</th>
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >TOP Start</th>
+
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >PPN</th>
+                      <th   scope="col"  style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >PPH23</th>
+                    </tr>
                 </thead>
                 <tbody>
                 <?php
@@ -92,7 +124,7 @@
                   <?php if ($users['level'] =='3'){
                   echo "";
                     }else{
-                  echo"<td><a class='btn btn-primary btn-xs' title='Edit Data' href='".base_url()."wmpsupplier/update/$row[wmp_supplier_session]'><i class='fas fa-edit'></i></a></td>";}?>
+                  echo"<td style='padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center; '><a class='btn btn-primary btn-xs' title='Edit Data' href='".base_url()."wmpsupplier/update/$row[wmp_supplier_session]'><i class='fas fa-edit'></i></a></td>";}?>
 
                   <td><?=$no++?></td>
                   <td>
@@ -106,13 +138,17 @@
                   <td><?=$row['wmp_supplier_npwp']?></td>
                   <td><?=$row['wmp_supplier_nama']?></td>
                   <td><?=$row['wmp_supplier_alamat']?></td>
-                  <td>
-                    <?php if ($row['wmp_supplier_block'] == 'Yes'){ ?>
-                      <a class="btn btn-danger btn-xs" title="Block" href=""><i class="fas fa-check"></i></a>
-                    <?php  }else{ ?>
-                      <a class="btn btn-success btn-xs" title="Unblock" href=""><i class="fas fa-ban"></i></a>
-                    <?php }?>
-                  </td>
+                  <td><?=$row['wmp_supplier_acc_no']?></td>
+                  <td><?=$row['wmp_supplier_note']?></td>
+                  <td><?=$row['wmp_supplier_npwp']?></td>
+                  <td><?=$row['wmp_supplier_nama']?></td>
+                  <td><?=$row['wmp_supplier_alamat']?></td>
+                  <td>sss</td>
+                  <td>sss</td>
+                  <td>sss</td>
+                  <td>sss</td>
+                  <td><?=$row['wmp_supplier_block']?></td>
+
 
                 </tr>
               <?php } ?>

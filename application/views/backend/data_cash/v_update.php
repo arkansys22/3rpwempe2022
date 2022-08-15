@@ -91,8 +91,8 @@
               </div>
             </div>
             <div class="card-footer">
-              <a class="btn btn-outline-info" title="Back" href="<?php echo base_url()?>cash"><i class="fab fa-creative-commons-sa"></i> Back</a>
-              <button type="submit" name ="submit" class="btn btn-primary" title="Submit"><i class="fas fa-file-upload"></i> Submit</button>
+              <a class="btn btn-default btn-md" title="Back" href="<?php echo base_url()?>cash"><i class="fas fa-undo-alt"></i> Back</a>
+              <button type="submit" name ="submit" class="btn btn-primary btn-md" title="Save & Refresh"><i class="fas fa-sync"></i> Save & Refresh</button>
             </div>
             <?php echo form_close(); ?>
 

@@ -79,19 +79,19 @@
                   <tr style="text-align: center;" >
                     <?php if ($users['level'] =='3'){ ?>
                     <?php  }else{ ?>
-                      <th rowspan="2" style="padding-bottom: 64px;" >Action</th>
+                      <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Action</th>
                     <?php }?>
-                    <th rowspan="2" style="padding-bottom: 64px;" >No</th>
-                    <th rowspan="2" style="padding-bottom: 64px;" >Status</th>
-                    <th rowspan="2" style="padding-bottom: 64px;" >ID</th>
-                    <th rowspan="2" style="padding-bottom: 64px;" >Description</th>
-                    <th colspan="2"><center>PIC</center></th>
-                    <th rowspan="2" style="padding-bottom: 64px;" >Currency</th>
-                    <th rowspan="2" style="padding-bottom: 64px;" >Bloked</th>
+                    <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >No</th>
+                    <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Status</th>
+                    <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >ID</th>
+                    <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Description</th>
+                    <th aria-controls="dataTables-C" scope="colgroup" colspan="2" rowspan="1" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  ><center>PIC</center></th>
+                    <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Currency</th>
+                    <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Blocked</th>
                   </tr>
                   <tr style="text-align: center;">
-                    <th>NIK</th>
-                    <th>Name</th>
+                    <th aria-controls="dataTables-C" scope="col" tabindex="0" rowspan="1" colspan="1" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >NIK</th>
+                    <th aria-controls="dataTables-C" scope="col" tabindex="0" rowspan="1" colspan="1" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Name</th>
                   </tr>
                   </div>
                 </thead>
@@ -106,26 +106,22 @@
                   <?php if ($users['level'] =='3'){
                   echo "";
                     }else{
-                  echo"<td><a class='btn btn-primary btn-xs' title='Edit Data' href='".base_url()."cash/update/$row[finance_cash_session]'><i class='fas fa-edit'></i></a></td>";}?>
+                  echo"<td style='padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center; ' ><a class='btn btn-primary btn-xs' title='Edit Data' href='".base_url()."cash/update/$row[finance_cash_session]'><i class='fa fa-search'></i></a></td>";}?>
 
-                  <td><?=$no++?></td>
-                  <td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$no++?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >
                     <?php if ($row['description']!=='21'){
                     echo "<a style='font-size:12px;' class='btn btn-default btn-xs' title='$row[description]' href='#'> $row[description]</a>";
                       }else{
                     echo"<a style='font-size:12px;' class='btn btn-success btn-xs' title='Verified' href='#'> Verified</a>";}?>
                   </td>
-                  <td><?=$row['finance_cash_no']?></td>
-                  <td><?=$row['finance_cash_deskripsi']?></td>
-                  <td><?=$row['finance_cash_nik']?></td>
-                  <td><?=$row['finance_cash_nama']?></td>
-                  <td><?=$row['finance_cash_currency']?></td>
-                  <td>
-                    <?php if ($row['finance_cash_block'] == 'Yes'){ ?>
-                      <a class="btn btn-danger btn-xs" title="Block" href=""><i class="fas fa-check"></i></a>
-                    <?php  }else{ ?>
-                      <a class="btn btn-success btn-xs" title="Unblock" href=""><i class="fas fa-ban"></i></a>
-                    <?php }?>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_no']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_deskripsi']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_nik']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_nama']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_currency']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_block']?>
+
                   </td>
 
                 </tr>

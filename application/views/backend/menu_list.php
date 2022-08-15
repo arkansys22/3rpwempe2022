@@ -167,7 +167,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="<?php echo base_url(); ?>aspanel/home" class="nav-link ">
+                        <a href="<?php echo base_url(); ?>wmpsupplier" class="nav-link ">
                           <i class="fas fa-user nav-icon"></i>
                           <p>List Supplier
                           </p>
