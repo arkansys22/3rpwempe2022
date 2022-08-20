@@ -42,9 +42,9 @@ class Wmpsupplier extends CI_Controller
     $data['karyawan_menu_open']   = 'menu-open';
     if ($this->session->level=='1'){
       cek_session_akses('company',$this->session->id_session);
-      $data['record'] = $this->Crud_m->view_join_where_ordering_field2('finance_cash','finance_cash_level','finance_cash_kategori','finance_cash_level_id',array('finance_cash_status'=>'0'),'finance_cash_id','ASC');
+      $data['record'] = $this->Crud_m->view_join_where_ordering_field2('wmp_supplier','wmp_supplier_level','wmp_supplier_kategori','wmp_supplier_level_id',array('wmp_supplier_status'=>'0'),'wmp_supplier_id','ASC');
       }else if ($this->session->level=='2'){
-        $data['record'] = $this->Crud_m->view_join_where_ordering_field2('finance_cash','finance_cash_level','finance_cash_kategori','finance_cash_level_id',array('finance_cash_status'=>'0'),'finance_cash_id','ASC');
+        $data['record'] = $this->Crud_m->view_join_where_ordering_field2('wmp_supplier','wmp_supplier_level','wmp_supplier_kategori','wmp_supplier_level_id',array('wmp_supplier_status'=>'0'),'wmp_supplier_id','ASC');
       } else{
 
       }
@@ -71,27 +71,27 @@ class Wmpsupplier extends CI_Controller
 
     if (isset($_POST['submit'])){
                     $data = array(
-                            'finance_cash_post_oleh'=>$this->session->id_user,
-                            'finance_cash_no'=>$this->input->post('finance_cash_no'),
-                            'finance_cash_bizacc'=>$this->input->post('finance_cash_bizacc'),
-                            'finance_cash_deskripsi'=>$this->input->post('finance_cash_deskripsi'),
-                            'finance_cash_currency'=>$this->input->post('finance_cash_currency'),
-                            'finance_cash_nik'=>$this->input->post('finance_cash_nik'),
-                            'finance_cash_nama'=>$this->input->post('finance_cash_nama'),
-                            'finance_cash_session'=>md5('wmpsupplier'.$this->input->post('finance_cash_bizacc') .hari_ini(date('w')) .date('Y-m-d') .date('H:i:s') ),
-                            'finance_cash_block'=>'Yes',
-                            'finance_cash_status'=>'21',
-                            'finance_cash_post_hari'=>hari_ini(date('w')),
-                            'finance_cash_post_tanggal'=>date('Y-m-d'),
-                            'finance_cash_post_jam'=>date('H:i:s'));
+                            'wmp_supplier_post_oleh'=>$this->session->id_user,
+                            'wmp_supplier_no'=>$this->input->post('wmp_supplier_no'),
+                            'wmp_supplier_bizacc'=>$this->input->post('wmp_supplier_bizacc'),
+                            'wmp_supplier_deskripsi'=>$this->input->post('wmp_supplier_deskripsi'),
+                            'wmp_supplier_currency'=>$this->input->post('wmp_supplier_currency'),
+                            'wmp_supplier_nik'=>$this->input->post('wmp_supplier_nik'),
+                            'wmp_supplier_nama'=>$this->input->post('wmp_supplier_nama'),
+                            'wmp_supplier_session'=>md5('wmpsupplier'.$this->input->post('wmp_supplier_bizacc') .hari_ini(date('w')) .date('Y-m-d') .date('H:i:s') ),
+                            'wmp_supplier_block'=>'Yes',
+                            'wmp_supplier_status'=>'21',
+                            'wmp_supplier_post_hari'=>hari_ini(date('w')),
+                            'wmp_supplier_post_tanggal'=>date('Y-m-d'),
+                            'wmp_supplier_post_jam'=>date('H:i:s'));
 
-                            $this->db->insert('finance_cash',$data,$where);
+                            $this->db->insert('wmp_supplier',$data,$where);
 
                             $data_history_addcompany = array (
                               'log_activity_user_id'=>$this->session->id_user,
                               'log_activity_modul' => 'wmpsupplier',
-                              'log_activity_bizacc' => $this->input->post('finance_cash_bizacc'),
-                              'log_activity_document_no' => $this->input->post('finance_cash_no'),
+                              'log_activity_bizacc' => $this->input->post('wmp_supplier_bizacc'),
+                              'log_activity_document_no' => $this->input->post('wmp_supplier_no'),
                               'log_activity_status' => 'Verifiying ',
                               'log_activity_platform'=> $agent,
                               'log_activity_ip'=> $this->input->ip_address()
@@ -133,19 +133,19 @@ class Wmpsupplier extends CI_Controller
     if (isset($_POST['submit'])){
                   $data = array(
 
-                          'finance_cash_bizacc'=>$this->input->post('finance_cash_bizacc'),
-                          'finance_cash_deskripsi'=>$this->input->post('finance_cash_deskripsi'),
-                          'finance_cash_currency'=>$this->input->post('finance_cash_currency'),
-                          'finance_cash_nik'=>$this->input->post('finance_cash_nik'),
-                          'finance_cash_nama'=>$this->input->post('finance_cash_nama'),
+                          'wmp_supplier_bizacc'=>$this->input->post('wmp_supplier_bizacc'),
+                          'wmp_supplier_deskripsi'=>$this->input->post('wmp_supplier_deskripsi'),
+                          'wmp_supplier_currency'=>$this->input->post('wmp_supplier_currency'),
+                          'wmp_supplier_nik'=>$this->input->post('wmp_supplier_nik'),
+                          'wmp_supplier_nama'=>$this->input->post('wmp_supplier_nama'),
 
-                          'finance_cash_status'=>'21',
-                          'finance_cash_post_hari'=>hari_ini(date('w')),
-                          'finance_cash_post_tanggal'=>date('Y-m-d'),
-                          'finance_cash_post_jam'=>date('H:i:s'));
+                          'wmp_supplier_status'=>'21',
+                          'wmp_supplier_post_hari'=>hari_ini(date('w')),
+                          'wmp_supplier_post_tanggal'=>date('Y-m-d'),
+                          'wmp_supplier_post_jam'=>date('H:i:s'));
 
-                          $where = array('finance_cash_session' => $this->input->post('finance_cash_session'));
-                          $this->db->update('finance_cash', $data, $where);
+                          $where = array('wmp_supplier_session' => $this->input->post('wmp_supplier_session'));
+                          $this->db->update('wmp_supplier', $data, $where);
 
 
                           if ($this->agent->is_browser())
@@ -168,8 +168,8 @@ class Wmpsupplier extends CI_Controller
                       $data_history_addcompany = array (
                         'log_activity_user_id'=>$this->session->id_user,
                         'log_activity_modul' => 'wmpsupplier',
-                        'log_activity_bizacc' => $this->input->post('finance_cash_bizacc'),
-                        'log_activity_document_no' => $this->input->post('finance_cash_no'),
+                        'log_activity_bizacc' => $this->input->post('wmp_supplier_bizacc'),
+                        'log_activity_document_no' => $this->input->post('wmp_supplier_no'),
                         'log_activity_status' => 'Modified ',
                         'log_activity_platform'=> $agent,
                         'log_activity_ip'=> $this->input->ip_address()
@@ -182,19 +182,19 @@ class Wmpsupplier extends CI_Controller
 
       if ($this->session->level=='1'){
         cek_session_akses('wmpsupplier',$this->session->id_session);
-        $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+        $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
       }elseif ($this->session->level=='2'){
         cek_session_akses_admin('wmpsupplier',$this->session->id_session);
-        $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+        $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
       }elseif ($this->session->level=='3') {
         cek_session_akses_staff('wmpsupplier',$this->session->id_session);
-        $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+        $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
       }elseif ($this->session->level=='4') {
         cek_session_akses_manager('wmpsupplier',$this->session->id_session);
-        $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+        $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
       }elseif ($this->session->level=='5') {
         cek_session_akses_bod('wmpsupplier',$this->session->id_session);
-        $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+        $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
       }else{
         redirect(base_url());
       }
@@ -241,19 +241,19 @@ class Wmpsupplier extends CI_Controller
       if (isset($_POST['submit'])){
                     $data = array(
 
-                            'finance_cash_bizacc'=>$this->input->post('finance_cash_bizacc'),
-                            'finance_cash_deskripsi'=>$this->input->post('finance_cash_deskripsi'),
-                            'finance_cash_currency'=>$this->input->post('finance_cash_currency'),
-                            'finance_cash_nik'=>$this->input->post('finance_cash_nik'),
-                            'finance_cash_nama'=>$this->input->post('finance_cash_nama'),
+                            'wmp_supplier_bizacc'=>$this->input->post('wmp_supplier_bizacc'),
+                            'wmp_supplier_deskripsi'=>$this->input->post('wmp_supplier_deskripsi'),
+                            'wmp_supplier_currency'=>$this->input->post('wmp_supplier_currency'),
+                            'wmp_supplier_nik'=>$this->input->post('wmp_supplier_nik'),
+                            'wmp_supplier_nama'=>$this->input->post('wmp_supplier_nama'),
 
-                            'finance_cash_status'=>'21',
-                            'finance_cash_post_hari'=>hari_ini(date('w')),
-                            'finance_cash_post_tanggal'=>date('Y-m-d'),
-                            'finance_cash_post_jam'=>date('H:i:s'));
+                            'wmp_supplier_status'=>'21',
+                            'wmp_supplier_post_hari'=>hari_ini(date('w')),
+                            'wmp_supplier_post_tanggal'=>date('Y-m-d'),
+                            'wmp_supplier_post_jam'=>date('H:i:s'));
 
-                            $where = array('finance_cash_session' => $this->input->post('finance_cash_session'));
-                            $this->db->update('finance_cash', $data, $where);
+                            $where = array('wmp_supplier_session' => $this->input->post('wmp_supplier_session'));
+                            $this->db->update('wmp_supplier', $data, $where);
 
 
                             if ($this->agent->is_browser())
@@ -276,8 +276,8 @@ class Wmpsupplier extends CI_Controller
                         $data_history_addcompany = array (
                           'log_activity_user_id'=>$this->session->id_user,
                           'log_activity_modul' => 'wmpsupplier',
-                          'log_activity_bizacc' => $this->input->post('finance_cash_bizacc'),
-                          'log_activity_document_no' => $this->input->post('finance_cash_no'),
+                          'log_activity_bizacc' => $this->input->post('wmp_supplier_bizacc'),
+                          'log_activity_document_no' => $this->input->post('wmp_supplier_no'),
                           'log_activity_status' => 'Modified ',
                           'log_activity_platform'=> $agent,
                           'log_activity_ip'=> $this->input->ip_address()
@@ -290,19 +290,19 @@ class Wmpsupplier extends CI_Controller
 
         if ($this->session->level=='1'){
           cek_session_akses('wmpsupplier',$this->session->id_session);
-          $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+          $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
         }elseif ($this->session->level=='2'){
           cek_session_akses_admin('wmpsupplier',$this->session->id_session);
-          $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+          $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
         }elseif ($this->session->level=='3') {
           cek_session_akses_staff('wmpsupplier',$this->session->id_session);
-          $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+          $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
         }elseif ($this->session->level=='4') {
           cek_session_akses_manager('wmpsupplier',$this->session->id_session);
-          $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+          $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
         }elseif ($this->session->level=='5') {
           cek_session_akses_bod('wmpsupplier',$this->session->id_session);
-          $proses = $this->As_m->edit('finance_cash', array('finance_cash_session' => $id))->row_array();
+          $proses = $this->As_m->edit('wmp_supplier', array('wmp_supplier_session' => $id))->row_array();
         }else{
           redirect(base_url());
         }

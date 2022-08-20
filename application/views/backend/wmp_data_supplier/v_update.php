@@ -18,9 +18,9 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><span style="font-size:13px;">Home</span></li>
-            <li class="breadcrumb-item"><span style="font-size:13px;">Finance</span></li>
+            <li class="breadcrumb-item"><span style="font-size:13px;">Purchasing</span></li>
             <li class="breadcrumb-item"><span style="font-size:13px;">Setting</span></li>
-            <li class="breadcrumb-item active"><span style="font-size:13px;">Update Cash</span></li>
+            <li class="breadcrumb-item active"><span style="font-size:13px;">Update Supplier</span></li>
           </ol>
         </div>
       </div>
@@ -34,7 +34,7 @@
           <!-- general form elements -->
           <div class="card card-light">
             <div class="card-header">
-              <h3 class="card-title"><strong>Cash</strong> <small>Update</small></h3>
+              <h3 class="card-title"><strong>Supplier</strong> <small>Update</small></h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -43,55 +43,148 @@
             ('cash/update',$attributes); ?>
 
             <div class="card-body">
-              <div class="form-group">
-                <input type="hidden" name="finance_cash_session" value="<?php echo $rows['finance_cash_session'] ?>">
-                <input type="hidden" name="finance_cash_bizacc" value="<?php echo $users_company['user_company_account'] ?>">
-                <input type="hidden" name="finance_cash_no" value="<?php echo $rows['finance_cash_no'] ?>">
+              <div class="form-group" style="font-size: 12px;">
+                <input type="hidden" name="wmp_supplier_session" value="<?php echo $rows['wmp_supplier_session'] ?>">
+                <input type="hidden" name="wmp_supplier_bizacc" value="<?php echo $users_company['user_company_account'] ?>">
+                <input type="hidden" name="wmp_supplier_acc_no" value="<?php echo $rows['wmp_supplier_acc_no'] ?>">
                 <div class="row">
-                  <div class="col-lg-6 col-sm-12">
-                    <div class="form-group">
-                      <label>ID</label>
-                      <input type="text" class="form-control" name="" value="<?php echo $rows['finance_cash_no'] ?>" disabled >
-                    </div>
-                    <div class="form-group">
-                      <label>Description</label>
-                      <input type="text" class="form-control" name="finance_cash_deskripsi" value="<?php echo $rows['finance_cash_deskripsi'] ?>" required="required">
-                    </div>
-                    <div class="form-group">
-                      <label>Currency</label>
-                      <select name='finance_cash_currency' class="form-control select2" style="width: 100%;" required="required">
-                        <option value=''></option>
-                        <?php foreach ($currency as $row) {
-                          if ($rows['finance_cash_currency'] == $row['name']){
-                            echo"<option selected='selected' value='$row[name]'>$row[name]</option>";
-                          }else{
-                            echo"<option value='$row[name]'>$row[name]</option>";
-                       }
-                     } ?>
-                    </select>
-                    </div>
+                  <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Account</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_acc_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">NPWP No.</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_acc_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">City</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Contact Person</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Telp No.</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">HP No.</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Fax</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                        </div>
+                      </div>
                   </div>
-                  <div class="col-lg-6 col-sm-12">
-                    <div class="form-group">
-                      <label>NIK PIC</label>
-                      <input type="text" class="form-control" name="finance_cash_nik" value="<?php echo $rows['finance_cash_nik'] ?>" required="required">
-                    </div>
-                    <div class="form-group">
-                      <label>Name PIC</label>
-                      <input type="text" class="form-control" name="finance_cash_nama" value="<?php echo $rows['finance_cash_nama'] ?>" required="required">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
 
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">PPN</label>
+                        <div class="col-sm-4">
+                          <select class="form-control">
+                            <option></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+                        <label class="col-sm-2 col-form-label">PPh 23</label>
+                        <div class="col-sm-4">
+                          <select class="form-control">
+                            <option></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Pay. Method</label>
+                        <div class="col-sm-4">
+                          <select class="form-control">
+                            <option></option>
+                            <option>CBD</option>
+                            <option>COD</option>
+                            <option>TOP</option>
+                          </select>
+                        </div>
+                        <label class="col-sm-2 col-form-label">TOP</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control" name="" placeholder="Days">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Start TOP</label>
+                        <div class="col-sm-10">
+                          <select class="form-control">
+                            <option></option>
+                            <option>INVOICE RECEIPT</option>
+                            <option>GOODS RECEIPT</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Note</label>
+                        <div class="col-sm-10">
+                          <textarea class="form-control" rows="3" style="height: 55px;"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Attachment</label>
+                        <div class="col-sm-3">
+                          <button type="button" class="btn btn-default btn-info btn-xs disabled"><i class="fas fa-plus" ></i> Add</button>
+                        </div>
+                        <div class="col-sm-3">
+                          <button type="button" class="btn btn-default btn-info btn-xs disabled"><i class="fas fa-plus" ></i> Add</button>
+                        </div>
+                        <div class="col-sm-3">
+                          <button type="button" class="btn btn-default btn-info btn-xs disabled"><i class="fas fa-plus" ></i> Add</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-
                 </div>
               </div>
             </div>
             <div class="card-footer">
-              <a class="btn btn-outline-info" title="Back" href="<?php echo base_url()?>cash"><i class="fab fa-creative-commons-sa"></i> Back</a>
+              <a class="btn btn-outline-info" title="Back" href="<?php echo base_url()?>wmpsupplier"><i class="fab fa-creative-commons-sa"></i> Back</a>
               <button type="submit" name ="submit" class="btn btn-primary" title="Submit"><i class="fas fa-file-upload"></i> Submit</button>
             </div>
             <?php echo form_close(); ?>
@@ -114,7 +207,7 @@
                 <tbody>
                 <?php
                 $no = 1;
-                $record= $this->Erp_m->view_join_ordering_trace('log_activity','user','log_activity_user_id','id_user',array('log_activity_bizacc'=>$users_company['user_company_account'],'log_activity_modul'=>'Cash', 'log_activity_document_no'=>$rows['finance_cash_no'] ),'log_activity_id','DESC');
+                $record= $this->Erp_m->view_join_ordering_trace('log_activity','user','log_activity_user_id','id_user',array('log_activity_bizacc'=>$users_company['user_company_account'],'log_activity_modul'=>'Cash', 'log_activity_document_no'=>$rows['wmp_supplier_session'] ),'log_activity_id','DESC');
                 foreach ($record as $row){
                   $tgl_posting = $this->mylibrary->tgl_indo($row['log_activity_waktu']);
                 ?>

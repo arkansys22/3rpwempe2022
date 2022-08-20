@@ -13,15 +13,15 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="col-sm-7">
           <span class="m-0 text-dark" style="font-size:25px;"><strong><?php echo $users_company['user_company_nama'];?> </strong></span><span><?php echo $users_company_level['user_company_level_nama'];?> Management System</span>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><span style="font-size:13px;">Home</span></li>
-            <li class="breadcrumb-item"><span style="font-size:13px;">Finance</span></li>
             <li class="breadcrumb-item"><span style="font-size:13px;">Setting</span></li>
-            <li class="breadcrumb-item active"><span style="font-size:13px;">add Cash</span></li>
+            <li class="breadcrumb-item"><span style="font-size:13px;">List Supplier</span></li>
+            <li class="breadcrumb-item active"><span style="font-size:13px;">Add Supplier</span></li>
           </ol>
         </div>
       </div>
@@ -35,60 +35,158 @@
           <!-- general form elements -->
           <div class="card card-light">
             <div class="card-header">
-              <h3 class="card-title"><strong>Cash</strong> <small>Add view</small></h3>
+              <h3 class="card-title"><strong>Supplier</strong> <small>Add view</small></h3>
             </div>
             <!-- /.card-header -->
 
 
             <!-- form start -->
             <?php $attributes = array('class'=>'form-horizontal','role'=>'form');
-            echo form_open_multipart('cash/add',$attributes); ?>
+            echo form_open_multipart('wmpsupplier/add',$attributes); ?>
               <div class="card-body">
 
-                <div class="form-group">
-                  <input type="hidden" name="finance_cash_bizacc" value="<?php echo $users_company['user_company_account'] ?>">
+                <div class="form-group" style="font-size: 12px;">
+                  <input type="hidden" name="wmp_supplier_bizacc" value="<?php echo $users_company['user_company_account'] ?>">
                   <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                      <div class="form-group">
-                        <label>ID</label>
-                        <input type="text" class="form-control" name="finance_cash_no" required="required">
-                      </div>
-                      <div class="form-group">
-                        <label>Description</label>
-                        <input type="text" class="form-control" name="finance_cash_deskripsi" required="required">
-                      </div>
-                      <div class="form-group">
-                        <label>Currency</label>
-                        <select name='finance_cash_currency' class="form-control select2" style="width: 100%;" required="required">
-                          <option value=''></option>
-                          <?php foreach ($currency as $row) {
-                              echo"<option value='$row[name]'>$row[name]</option>";
-                            } ?>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                      <div class="form-group">
-                        <label>NIK PIC</label>
-                        <input type="text" class="form-control" name="finance_cash_nik" required="required">
-                      </div>
-                      <div class="form-group">
-                        <label>Name PIC</label>
-                        <input type="text" class="form-control" name="finance_cash_nama" required="required">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
 
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Account</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_acc_no" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Name</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_nama" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">NPWP No.</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_npwp" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Address</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_alamat" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">City</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_kota" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Contact Person</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_cp" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Telp No.</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_telp" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">HP No.</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_hp" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Fax</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_fax" required="required">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Email</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="wmp_supplier_email" required="required">
+                          </div>
+                        </div>
                     </div>
 
+                    <div class="col-md-6">
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">PPN</label>
+                          <div class="col-sm-4">
+                            <select name="wmp_supplier_ppn" class="form-control">
+                              <option></option>
+                              <option>Yes</option>
+                              <option>No</option>
+                            </select>
+                          </div>
+                          <label class="col-sm-2 col-form-label">PPh 23</label>
+                          <div class="col-sm-4">
+                            <select name="wmp_supplier_pph23" class="form-control">
+                              <option></option>
+                              <option>Yes</option>
+                              <option>No</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Pay. Method</label>
+                          <div class="col-sm-4">
+                            <select name="wmp_supplier_paymethod" class="form-control">
+                              <option></option>
+                              <option>CBD</option>
+                              <option>COD</option>
+                              <option>TOP</option>
+                            </select>
+                          </div>
+                          <label class="col-sm-2 col-form-label">TOP</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control" name="wmp_supplier_top" placeholder="Days">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Start TOP</label>
+                          <div class="col-sm-10">
+                            <select name="wmp_supplier_starttop" class="form-control">
+                              <option></option>
+                              <option>INVOICE RECEIPT</option>
+                              <option>GOODS RECEIPT</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Note</label>
+                          <div class="col-sm-10">
+                            <textarea class="form-control" rows="3" name="wmp_supplier_note" style="height: 55px;"></textarea>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Attachment</label>
+                          <div class="col-sm-3">
+                            <button type="button" class="btn btn-default btn-info btn-xs disabled"><i class="fas fa-plus" ></i> Add</button>
+                          </div>
+                          <div class="col-sm-3">
+                            <button type="button" class="btn btn-default btn-info btn-xs disabled"><i class="fas fa-plus" ></i> Add</button>
+                          </div>
+                          <div class="col-sm-3">
+                            <button type="button" class="btn btn-default btn-info btn-xs disabled"><i class="fas fa-plus" ></i> Add</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="card-footer">
-                <a class="btn btn-outline-info" title="Back" href="<?php echo base_url()?>cash"><i class="fab fa-creative-commons-sa"></i> Back</a>
-                <button type="submit" name ="submit" class="btn btn-primary" title="Submit"><i class="fas fa-file-upload"></i> Submit</button>
+                <a class="btn btn-outline-info" title="Back" href="<?php echo base_url()?>wmpsupplier"><i class="fab fa-creative-commons-sa"></i> Back</a>
+                <button type="submit" name ="submit" class="btn btn-info" title="Submit"><i class="fas fa-save"></i> Submit</button>
 
 
               </div>

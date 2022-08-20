@@ -17,6 +17,7 @@
         <div class="col-sm-4">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><span style="font-size:13px;">Home</span></li>
+            <li class="breadcrumb-item"><span style="font-size:13px;">Purchasing</span></li>
             <li class="breadcrumb-item"><span style="font-size:13px;">Setting</span></li>
             <li class="breadcrumb-item active"><span style="font-size:13px;">List Supplier</span></li>
           </ol>
@@ -69,7 +70,13 @@
             <div class="col-md-12 d-xs-none" >
               <?php if ($users['level'] =='3'){ ?>
               <?php  }else{ ?>
-                <p><h3 class="text-right"><a class="btn btn-success btn-sm" title="Tambah" href="<?php echo base_url()?>wmpsupplier/add"><i class="fas fa-plus"></i> Add New</a></h3></p>
+                <p>
+                  <h3 class="text-right">
+                    <a class="btn btn-success btn-sm" title="Tambah" href="<?php echo base_url()?>wmpsupplier/add"><i class="fas fa-plus"></i> Add New
+                    </a>
+                    <a class="btn btn-info btn-sm" title="Export" href="#"><i class="far fa-file-excel"></i> Export To Excel
+                    </a>
+                  </h3></p>
               <?php }?>
             </div>
             <div class="card-body table-responsive" style="font-size:12px;">
