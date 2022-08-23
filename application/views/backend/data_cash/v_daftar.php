@@ -74,9 +74,9 @@
                 <?php }?>
               </div>
               <table id="bank_table1" class="table table-bordered table-striped table-hover" >
-                <thead >
+                <thead style="text-align: center;" >
                   <div >
-                  <tr style="text-align: center;" >
+                  <tr  >
                     <?php if ($users['level'] =='3'){ ?>
                     <?php  }else{ ?>
                       <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Action</th>
@@ -89,43 +89,45 @@
                     <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Currency</th>
                     <th aria-controls="dataTables-C" scope="colgroup" colspan="1" rowspan="2" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; "  >Blocked</th>
                   </tr>
-                  <tr style="text-align: center;">
+                  <tr >
                     <th aria-controls="dataTables-C" scope="col" tabindex="0" rowspan="1" colspan="1" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >NIK</th>
                     <th aria-controls="dataTables-C" scope="col" tabindex="0" rowspan="1" colspan="1" style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >Name</th>
                   </tr>
                   </div>
                 </thead>
-                <tbody>
-                <?php
-                $no = 1;
-                $record= $this->Erp_m->view_join_2table_2filed('finance_cash','dokumen_status','finance_cash_status','id',array('finance_cash_bizacc'=>$users_company['user_company_account']),'finance_cash_id','ASC');
-                foreach ($record as $row){
-                  ?>
+                <tbody >
+                  <?php
+                  $no = 1;
+                  $record= $this->Erp_m->view_join_2table_2filed('finance_cash','dokumen_status','finance_cash_status','id',array('finance_cash_bizacc'=>$users_company['user_company_account']),'finance_cash_id','ASC');
+                  foreach ($record as $row){
+                    ?>
 
-                <tr>
-                  <?php if ($users['level'] =='3'){
-                  echo "";
-                    }else{
-                  echo"<td style='padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center; ' ><a class='btn btn-primary btn-xs' title='Edit Data' href='".base_url()."cash/update/$row[finance_cash_session]'><i class='fa fa-search'></i></a></td>";}?>
-
-                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$no++?></td>
-                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >
-                    <?php if ($row['description']!=='21'){
-                    echo "<a style='font-size:12px;' class='btn btn-default btn-xs' title='$row[description]' href='#'> $row[description]</a>";
+                  <tr>
+                    <?php if ($users['level'] =='3'){
+                    echo "";
                       }else{
-                    echo"<a style='font-size:12px;' class='btn btn-success btn-xs' title='Verified' href='#'> Verified</a>";}?>
-                  </td>
-                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_no']?></td>
-                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_deskripsi']?></td>
-                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_nik']?></td>
-                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_nama']?></td>
-                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_currency']?></td>
-                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_block']?>
+                    echo"<td style='padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center; ' ><a class='btn btn-primary btn-xs' title='Edit Data' href='".base_url()."cash/update/$row[finance_cash_session]'><i class='fa fa-search'></i></a></td>";
+                    }?>
 
-                  </td>
+                    <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$no++?></td>
+                    <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " >
+                      <?php if ($row['description'] !=='21'){
+                      echo "<a style='font-size:12px;' class='btn btn-default btn-xs' title='$row[description]' href='#'> $row[description]</a>";
+                        }else{
+                      echo"<a style='font-size:12px;' class='btn btn-success btn-xs' title='Verified' href='#'> Verified</a>";
+                      }?>
+                    </td>
+                    <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_no']?></td>
+                    <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_deskripsi']?></td>
+                    <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_nik']?></td>
+                    <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_nama']?></td>
+                    <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_currency']?></td>
+                    <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; " ><?=$row['finance_cash_block']?>
 
-                </tr>
-              <?php } ?>
+                    </td>
+
+                  </tr>
+                  <?php } ?>
 
                 </tbody>
               </table>

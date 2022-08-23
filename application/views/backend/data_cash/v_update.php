@@ -12,10 +12,10 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="col-sm-7">
           <span class="m-0 text-dark" style="font-size:25px;"><strong><?php echo $users_company['user_company_nama'];?> </strong></span><span><?php echo $users_company_level['user_company_level_nama'];?> Management System</span>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><span style="font-size:13px;">Home</span></li>
             <li class="breadcrumb-item"><span style="font-size:13px;">Finance</span></li>
@@ -34,7 +34,7 @@
           <!-- general form elements -->
           <div class="card card-light">
             <div class="card-header">
-              <h3 class="card-title"><strong>Cash</strong> <small>Update</small></h3>
+              <h3 class="card-title"><strong>Cash</strong> <small>View</small></h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -42,43 +42,53 @@
             echo form_open_multipart
             ('cash/update',$attributes); ?>
 
-            <div class="card-body">
-              <div class="form-group">
+            <div class="card-body"  style="font-size: 12px;">
+              <div class="form-group" >
                 <input type="hidden" name="finance_cash_session" value="<?php echo $rows['finance_cash_session'] ?>">
                 <input type="hidden" name="finance_cash_bizacc" value="<?php echo $users_company['user_company_account'] ?>">
                 <input type="hidden" name="finance_cash_no" value="<?php echo $rows['finance_cash_no'] ?>">
                 <div class="row">
                   <div class="col-lg-6 col-sm-12">
-                    <div class="form-group">
-                      <label>ID</label>
-                      <input type="text" class="form-control" name="" value="<?php echo $rows['finance_cash_no'] ?>" disabled >
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">ID</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="" value="<?php echo $rows['finance_cash_no'] ?>" disabled >
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label>Description</label>
-                      <input type="text" class="form-control" name="finance_cash_deskripsi" value="<?php echo $rows['finance_cash_deskripsi'] ?>" required="required">
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Description</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="finance_cash_deskripsi" value="<?php echo $rows['finance_cash_deskripsi'] ?>" required="required">
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label>Currency</label>
-                      <select name='finance_cash_currency' class="form-control select2" style="width: 100%;" required="required">
-                        <option value=''></option>
-                        <?php foreach ($currency as $row) {
-                          if ($rows['finance_cash_currency'] == $row['name']){
-                            echo"<option selected='selected' value='$row[name]'>$row[name]</option>";
-                          }else{
-                            echo"<option value='$row[name]'>$row[name]</option>";
-                       }
-                     } ?>
-                    </select>
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Currency</label>
+                      <div class="col-sm-10">
+                        <select name='finance_cash_currency' class="form-control select2" style="width: 100%;" required="required">
+                          <option value=''></option>
+                          <?php foreach ($currency as $row) {
+                            if ($rows['finance_cash_currency'] == $row['name']){
+                              echo"<option selected='selected' value='$row[name]'>$row[name]</option>";
+                            }else{
+                              echo"<option value='$row[name]'>$row[name]</option>";
+                         }
+                       } ?>
+                      </select>
+                    </div>
                     </div>
                   </div>
                   <div class="col-lg-6 col-sm-12">
-                    <div class="form-group">
-                      <label>NIK PIC</label>
-                      <input type="text" class="form-control" name="finance_cash_nik" value="<?php echo $rows['finance_cash_nik'] ?>" required="required">
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">NIK PIC</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="finance_cash_nik" value="<?php echo $rows['finance_cash_nik'] ?>" required="required">
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label>Name PIC</label>
-                      <input type="text" class="form-control" name="finance_cash_nama" value="<?php echo $rows['finance_cash_nama'] ?>" required="required">
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label">Name PIC</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="finance_cash_nama" value="<?php echo $rows['finance_cash_nama'] ?>" required="required">
+                      </div>
                     </div>
                   </div>
                 </div>
