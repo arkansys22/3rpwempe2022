@@ -133,28 +133,28 @@
                     }else{
                   echo"<td style='padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center; '><a class='btn btn-primary btn-xs' title='Edit Data' href='".base_url()."wmpsupplier/update/$row[wmp_supplier_session]'><i class='fas fa-edit'></i></a></td>";}?>
 
-                  <td><?=$no++?></td>
-                  <td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$no++?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;">
                     <?php if ($row['description']!=='21'){
                     echo "<a style='font-size:12px;' class='btn btn-default btn-xs' title='$row[description]' href='#'> $row[description]</a>";
                       }else{
                     echo"<a style='font-size:12px;' class='btn btn-success btn-xs' title='Verified' href='#'> Verified</a>";}?>
                   </td>
-                  <td><?=$row['wmp_supplier_acc_no']?></td>
-                  <td><?=$row['wmp_supplier_note']?></td>
-                  <td><?=$row['wmp_supplier_npwp']?></td>
-                  <td><?=$row['wmp_supplier_nama']?></td>
-                  <td><?=$row['wmp_supplier_alamat']?></td>
-                  <td><?=$row['wmp_supplier_acc_no']?></td>
-                  <td><?=$row['wmp_supplier_note']?></td>
-                  <td><?=$row['wmp_supplier_npwp']?></td>
-                  <td><?=$row['wmp_supplier_nama']?></td>
-                  <td><?=$row['wmp_supplier_alamat']?></td>
-                  <td>sss</td>
-                  <td>sss</td>
-                  <td>sss</td>
-                  <td>sss</td>
-                  <td><?=$row['wmp_supplier_block']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_acc_no']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_nama']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_npwp']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_alamat']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_kota']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_cp']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_telp']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_fax']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_email']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_paymethod']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_top']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_starttop']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_ppn']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_pph23']?></td>
+                  <td style="padding-top: 2px; padding-bottom: 2px; vertical-align: top; text-align: center;"><?=$row['wmp_supplier_block']?></td>
 
 
                 </tr>

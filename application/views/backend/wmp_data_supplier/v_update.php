@@ -52,61 +52,61 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Account</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_acc_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_acc_no" value="<?php echo $rows['wmp_supplier_acc_no'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_nama"  value="<?php echo $rows['wmp_supplier_nama'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">NPWP No.</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_acc_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_npwp" value="<?php echo $rows['wmp_supplier_npwp'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Address</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_alamat" value="<?php echo $rows['wmp_supplier_alamat'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">City</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_kota" value="<?php echo $rows['wmp_supplier_kota'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Contact Person</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_cp" value="<?php echo $rows['wmp_supplier_cp'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Telp No.</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_telp" value="<?php echo $rows['wmp_supplier_telp'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">HP No.</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_hp" value="<?php echo $rows['wmp_supplier_hp'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Fax</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                          <input type="text" class="form-control" name="wmp_supplier_fax" value="<?php echo $rows['wmp_supplier_fax'] ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="wmp_supplier_no" required="required">
+                          <input type="email" class="form-control" name="wmp_supplier_email" value="<?php echo $rows['wmp_supplier_email'] ?>">
                         </div>
                       </div>
                   </div>
@@ -116,18 +116,34 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">PPN</label>
                         <div class="col-sm-4">
-                          <select class="form-control">
-                            <option></option>
-                            <option>Yes</option>
-                            <option>No</option>
+                          <select name="wmp_supplier_ppn" class="form-control">
+                            <?php if(empty($rows['wmp_supplier_ppn'])) { ?>
+                              <option></option>
+                              <option value="Yes" selected>Yes</option>
+                              <option value="No">No</option>
+                            <?php }elseif($rows['wmp_supplier_ppn'] == 'Yes') { ?>
+                              <option value="Yes" selected>Yes</option>
+                              <option value="No">No</option>
+                            <?php }else{ ?>
+                              <option value="Yes">Yes</option>
+                              <option value="No" selected>No</option>
+                            <?php } ?>
                           </select>
                         </div>
                         <label class="col-sm-2 col-form-label">PPh 23</label>
                         <div class="col-sm-4">
-                          <select class="form-control">
+                          <select name="wmp_supplier_pph23" class="form-control">
+                            <?php if(empty($rows['wmp_supplier_pph23'])) { ?>
                             <option></option>
-                            <option>Yes</option>
-                            <option>No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <?php }elseif($rows['wmp_supplier_pph23'] == 'Yes') { ?>
+                              <option value="Yes" selected>Yes</option>
+                              <option value="No">No</option>
+                            <?php }else{ ?>
+                              <option value="Yes">Yes</option>
+                              <option value="No" selected>No</option>
+                            <?php } ?>
                           </select>
                         </div>
                       </div>
@@ -136,16 +152,30 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Pay. Method</label>
                         <div class="col-sm-4">
-                          <select class="form-control">
+                          <select name="wmp_supplier_paymethod" class="form-control">
+                            <?php if(empty($rows['wmp_supplier_paymethod'])) { ?>
                             <option></option>
-                            <option>CBD</option>
-                            <option>COD</option>
-                            <option>TOP</option>
+                            <option value="CBD">CBD</option>
+                            <option value="COD">COD</option>
+                            <option value="TOP">TOP</option>
+                            <?php }elseif($rows['wmp_supplier_paymethod'] == 'CBD') { ?>
+                              <option value="CBD" selected>CBD</option>
+                              <option value="COD">COD</option>
+                              <option value="TOP">TOP</option>
+                            <?php }elseif($rows['wmp_supplier_paymethod'] == 'COD') { ?>
+                              <option value="CBD">CBD</option>
+                              <option value="COD" selected>COD</option>
+                              <option value="TOP">TOP</option>
+                            <?php }else{ ?>
+                              <option value="CBD">CBD</option>
+                              <option value="COD">COD</option>
+                              <option value="TOP" selected>TOP</option>
+                            <?php } ?>
                           </select>
                         </div>
                         <label class="col-sm-2 col-form-label">TOP</label>
                         <div class="col-sm-4">
-                          <input type="text" class="form-control" name="" placeholder="Days">
+                          <input type="text" class="form-control" name="wmp_supplier_top" value="<?php echo $rows['wmp_supplier_top'] ?>">
                         </div>
                       </div>
                     </div>
@@ -153,17 +183,25 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Start TOP</label>
                         <div class="col-sm-10">
-                          <select class="form-control">
-                            <option></option>
-                            <option>INVOICE RECEIPT</option>
-                            <option>GOODS RECEIPT</option>
+                          <select name="wmp_supplier_starttop" class="form-control">
+                            <?php if(empty($rows['wmp_supplier_starttop'])) { ?>
+                              <option selected></option>
+                              <option value="INVOICE RECEIPT">INVOICE RECEIPT</option>
+                              <option value="GOODS RECEIPT">GOODS RECEIPT</option>
+                            <?php }elseif($rows['wmp_supplier_starttop'] == 'INVOICE RECEIPT') { ?>
+                              <option value="INVOICE RECEIPT" selected>INVOICE RECEIPT</option>
+                              <option value="GOODS RECEIPT">GOODS RECEIPT</option>
+                            <?php }else { ?>
+                              <option value="INVOICE RECEIPT">INVOICE RECEIPT</option>
+                              <option value="GOODS RECEIPT" selected>GOODS RECEIPT</option>
+                            <?php }?>
                           </select>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Note</label>
                         <div class="col-sm-10">
-                          <textarea class="form-control" rows="3" style="height: 55px;"></textarea>
+                          <textarea class="form-control"  name="wmp_supplier_note"  rows="3" style="height: 55px;"><?php echo $rows['wmp_supplier_note'] ?></textarea>
                         </div>
                       </div>
                       <div class="form-group row">
